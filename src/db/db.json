@@ -1,5 +1,8 @@
 [
   {
-    "product_id": "10717"
+    "product_id": "10717",
+    "official_price": 899,
+    "taobao_lowest_price": 300,
+    "weight": 1.79
   }
 ]

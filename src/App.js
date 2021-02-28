@@ -22,7 +22,11 @@ class App extends Component {
     // }
     return (
       <div>
-        {`Product ID: ${foundItem.product_id}, Piece Count: ${pieceCount}`}
+        {`Product ID: ${
+          foundItem.product_id
+        }, Piece Count: ${pieceCount}, PPP: ${
+          foundItem.taobao_lowest_price / foundSet.num_parts
+        }`}
         <img
           src={`https://images.brickset.com/sets/small/${foundSet.set_num}.jpg`}
           alt={`LEGO ${foundSet.set_num}`}
