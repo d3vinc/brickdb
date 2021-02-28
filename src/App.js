@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-
-const db = [
-  {
-    product_id: "10717",
-  },
-];
+import db from "./db/db.json";
+import setsDb from "./db/sets.csv.json";
 
 class App extends Component {
   state = {
@@ -15,26 +11,54 @@ class App extends Component {
       value: event.target.value,
     });
   };
-  render() {
+
+  renderProduct = (foundItem, foundSet) => {
+    const pieceCount = foundSet.num_parts;
+    // How to render product images: https://brickset.com/article/49510/new-version-of-brickset-api-now-available
+    // {
+    //   "thumbnailURL": " https://images.brickset.com/sets/small/21322-1.jpg ",
+    //   "imageURL": " https://images.brickset.com/sets/images/21322-1.jpg ",
+    //   "bricksetURL": " https://brickset.com/sets/21322-1 ",
+    // }
+    return (
+      <div>
+        {`Product ID: ${foundItem.product_id}, Piece Count: ${pieceCount}`}
+        <img
+          src={`https://images.brickset.com/sets/small/${foundSet.set_num}.jpg`}
+          alt={`LEGO ${foundSet.set_num}`}
+        />
+      </div>
+    );
+  };
+
+  renderContent = () => {
     const { value } = this.state;
-    let content = "No Data";
 
     if (!value) {
-      content = "Please input";
-    } else {
-      const foundItem = db.find(
-        (item) => item.product_id.indexOf(value) !== -1
-      );
-      if (foundItem) {
-        content = `Product ID: ${foundItem.product_id}`;
-      }
+      return "Please input";
     }
 
+    const foundItem = db.find((item) => item.product_id.indexOf(value) !== -1);
+    if (!foundItem) {
+      return "No data (not found in personal DB)";
+    }
+
+    const foundSet = setsDb.find(
+      (set) => set.set_num === `${foundItem.product_id}-1`
+    );
+    if (!foundSet) {
+      return `No data (not found in sets DB): Cannot find sets with given product id: ${foundItem.product_id}`;
+    }
+
+    return this.renderProduct(foundItem, foundSet);
+  };
+
+  render() {
     return (
       <div>
         <h1>Brick DB</h1>
         <input onChange={this.handleChange}></input>
-        <div>{content}</div>
+        <div>{this.renderContent()}</div>
       </div>
     );
   }
