@@ -23,12 +23,13 @@ class App extends Component {
     // }
     return (
       <div>
-        {`Product ID: ${item.product_id}, Piece Count: ${
-          set.num_parts
-        }, PPP: ${ppp(
+        <div>{`Product ID: ${item.product_id}`}</div>
+        <div>{`Piece Count: ${set.num_parts}`}</div>
+        <div>{`PPP: ${ppp(
           [item.taobao_lowest_price, item.pinduoduo_lowest_price],
           set.num_parts
-        )}`}
+        )}`}</div>
+
         <img
           src={`https://images.brickset.com/sets/small/${set.set_num}.jpg`}
           alt={`LEGO ${set.set_num}`}
