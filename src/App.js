@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+
+import { ppp } from "./utils";
 import db from "./db/db.json";
 import setsDb from "./db/sets.csv.json";
 
@@ -12,8 +14,7 @@ class App extends Component {
     });
   };
 
-  renderProduct = (foundItem, foundSet) => {
-    const pieceCount = foundSet.num_parts;
+  renderProduct = (item, set) => {
     // How to render product images: https://brickset.com/article/49510/new-version-of-brickset-api-now-available
     // {
     //   "thumbnailURL": " https://images.brickset.com/sets/small/21322-1.jpg ",
@@ -22,14 +23,15 @@ class App extends Component {
     // }
     return (
       <div>
-        {`Product ID: ${
-          foundItem.product_id
-        }, Piece Count: ${pieceCount}, PPP: ${
-          foundItem.taobao_lowest_price / foundSet.num_parts
-        }`}
+        {`Product ID: ${item.product_id}, Piece Count: ${
+          set.num_parts
+        }, PPP: ${ppp(
+          [item.taobao_lowest_price, item.pinduoduo_lowest_price],
+          set.num_parts
+        )}`}
         <img
-          src={`https://images.brickset.com/sets/small/${foundSet.set_num}.jpg`}
-          alt={`LEGO ${foundSet.set_num}`}
+          src={`https://images.brickset.com/sets/small/${set.set_num}.jpg`}
+          alt={`LEGO ${set.set_num}`}
         />
       </div>
     );

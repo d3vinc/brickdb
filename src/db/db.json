@@ -4,5 +4,42 @@
     "official_price": 899,
     "taobao_lowest_price": 300,
     "weight": 1.79
+  },
+  {
+    "product_id":"92176",
+    "official_price":1099,
+    "taobao_lowest_price": 689
+  },
+  {
+    "product_id":"10704",
+    "official_price":0,
+    "taobao_lowest_price": 259
+  },
+  {
+    "product_id":"10255",
+    "official_price":0,
+    "taobao_lowest_price": 1500
+  },
+  {
+    "product_id":"11004",
+    "official_price":0,
+    "taobao_lowest_price": 205,
+    "pinduoduo_lowest_price": 205
+  },
+  {
+    "product_id":"10264",
+    "official_price":1699,
+    "taobao_lowest_price": 1000
+  },
+  {
+    "product_id":"42108",
+    "official_price":0,
+    "taobao_lowest_price": 0,
+    "pinduoduo_lowest_price": 618
+  },
+  {
+    "product_id":"XXXXXXXXXX",
+    "official_price":0,
+    "taobao_lowest_price": 0
   }
 ]
