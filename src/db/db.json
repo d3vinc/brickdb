@@ -1,45 +1,233 @@
 [
   {
+    "product_id": "10214",
+    "taobao_lowest_price": 2000
+  },
+  {
+    "product_id": "10255",
+    "official_price": 0,
+    "taobao_lowest_price": 1500
+  },
+  {
+    "product_id": "10258",
+    "official_price": 1099,
+    "taobao_lowest_price": 700
+  },
+  {
+    "product_id": "10260",
+    "taobao_lowest_price": 1600,
+    "prices": [
+      {
+        "from": "taobao",
+        "price": 1600,
+        "date": "2021-01-23"
+      }
+    ]
+  },
+  {
+    "product_id": "10264",
+    "official_price": 1699,
+    "taobao_lowest_price": 1000
+  },
+  {
+    "product_id": "10266",
+    "official_price": 999,
+    "taobao_lowest_price": 630,
+    "pinduoduo_lowest_price": 619
+  },
+  {
+    "product_id": "10700",
+    "description": "绿色底板\n32x32, 25cm x 25cm",
+    "official_price": 99,
+    "taobao_lowest_price": 46
+  },
+  {
+    "product_id": "10701",
+    "description": "灰色底板\n48x48, 38cm x 38cm",
+    "official_price": 169,
+    "taobao_lowest_price": 90
+  },
+  {
+    "product_id": "10704",
+    "official_price": 0,
+    "taobao_lowest_price": 259
+  },
+  {
+    "product_id": "10714",
+    "description": "蓝色底板\n32x32, 25cm x 25cm",
+    "official_price": 99,
+    "taobao_lowest_price": 44
+  },
+  {
     "product_id": "10717",
     "official_price": 899,
     "taobao_lowest_price": 300,
     "weight": 1.79
   },
   {
-    "product_id":"92176",
-    "official_price":1099,
-    "taobao_lowest_price": 689
-  },
-  {
-    "product_id":"10704",
-    "official_price":0,
-    "taobao_lowest_price": 259
-  },
-  {
-    "product_id":"10255",
-    "official_price":0,
-    "taobao_lowest_price": 1500
-  },
-  {
-    "product_id":"11004",
-    "official_price":0,
+    "product_id": "11004",
+    "official_price": 0,
     "taobao_lowest_price": 205,
     "pinduoduo_lowest_price": 205
   },
   {
-    "product_id":"10264",
-    "official_price":1699,
-    "taobao_lowest_price": 1000
+    "product_id": "11009",
+    "official_price": 329,
+    "taobao_lowest_price": 179,
+    "prices": [
+      {
+        "from": "taobao",
+        "date": "2020-11-14",
+        "price": 179
+      }
+    ]
   },
   {
-    "product_id":"42108",
-    "official_price":0,
+    "product_id": "11011",
+    "taobao_lowest_price": 349
+  },
+  {
+    "product_id": "17101",
+    "official_price": 1699,
+    "taobao_lowest_price": 950,
+    "pinduoduo_lowest_price": 835
+  },
+  {
+    "product_id": "21034",
+    "official_price": 0,
+    "taobao_lowest_price": 250
+  },
+  {
+    "product_id": "21309",
+    "official_price": 0,
+    "taobao_lowest_price": 1100
+  },
+  {
+    "product_id": "21321"
+  },
+  {
+    "product_id": "31099",
+    "official_price": 109,
+    "taobao_lowest_price": 71
+  },
+  {
+    "product_id": "31100",
+    "official_price": 0,
+    "pinduoduo_lowest_price": 70
+  },
+  {
+    "product_id": "42065",
+    "taobao_lowest_price": 538
+  },
+  {
+    "product_id": "42079",
+    "taobao_lowest_price": 290
+  },
+  {
+    "product_id": "42089",
+    "pinduoduo_lowest_price": 99
+  },
+  {
+    "product_id": "42095",
+    "official_price": 799,
+    "taobao_lowest_price": 538,
+    "pinduoduo_lowest_price": 499,
+    "prices": [
+      {
+        "from": "pinduoduo",
+        "date": "2021-02-23",
+        "price": 499
+      }
+    ]
+  },
+  {
+    "product_id": "42101",
+    "taobao_lowest_price": 69
+  },
+  {
+    "product_id": "42102"
+  },
+  {
+    "product_id": "42108",
+    "official_price": 0,
     "taobao_lowest_price": 0,
     "pinduoduo_lowest_price": 618
   },
   {
-    "product_id":"XXXXXXXXXX",
-    "official_price":0,
+    "product_id": "42109",
+    "taobao_lowest_price": 688,
+    "pinduoduo_lowest_price": 659
+  },
+  {
+    "product_id": "42112",
+    "official_price": 0,
+    "taobao_lowest_price": 678,
+    "pinduoduo_lowest_price": 599
+  },
+  {
+    "product_id": "45300",
+    "taobao_lowest_price": 830
+  },
+  {
+    "product_id": "60182",
+    "official_price": 349,
+    "taobao_lowest_price": 190
+  },
+  {
+    "product_id": "60197",
+    "official_price": 1199,
+    "taobao_lowest_price": 0,
+    "pinduoduo_lowest_price": 660
+  },
+  {
+    "product_id": "60198",
+    "pinduoduo_lowest_price": 1199
+  },
+  {
+    "product_id": "60206",
+    "official_price": 0,
+    "taobao_lowest_price": 125
+  },
+  {
+    "product_id": "60236",
+    "description": "60236 直道和丁字路口\n32x32",
+    "official_price": 99,
+    "taobao_lowest_price": 63
+  },
+  {
+    "product_id": "60237",
+    "description": "60237 弯道和十字路口\n32x32",
+    "official_price": 99,
+    "taobao_lowest_price": 58
+  },
+  {
+    "product_id": "60263",
+    "official_price": 199,
+    "taobao_lowest_price": 120,
+    "pinduoduo_lowest_price": 122
+  },
+  {
+    "product_id": "60265"
+  },
+  {
+    "product_id": "60238",
+    "official_price": 0,
+    "taobao_lowest_price": 108
+  },
+  {
+    "product_id": "60262",
+    "official_price": 1079,
+    "taobao_lowest_price": 899,
+    "pinduoduo_lowest_price": 593
+  },
+  {
+    "product_id": "92176",
+    "official_price": 1099,
+    "taobao_lowest_price": 689
+  },
+  {
+    "product_id": "XXXXXXXXXX",
+    "official_price": 0,
     "taobao_lowest_price": 0
   }
 ]

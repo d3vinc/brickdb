@@ -25,6 +25,8 @@ class App extends Component {
       <div>
         <div>{`Product ID: ${item.product_id}`}</div>
         <div>{`Piece Count: ${set.num_parts}`}</div>
+        <div>{`Taobao lowest price: ${item.taobao_lowest_price}`}</div>
+        <div>{`Pinduoduo lowest price: ${item.pinduoduo_lowest_price}`}</div>
         <div>{`PPP: ${ppp(
           [item.taobao_lowest_price, item.pinduoduo_lowest_price],
           set.num_parts
