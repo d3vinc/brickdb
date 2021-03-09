@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 
-import { ppp } from "./utils";
-import db from "./db/db.json";
+import personalDb from "./db/db.json";
 import setsDb from "./db/sets.csv.json";
+import { getPersonalItemBySetNum, getSetByKeyword } from "./helpers";
+
+const TYPES = ["taobao", "pinduoduo"];
 
 class App extends Component {
   state = {
@@ -14,7 +16,45 @@ class App extends Component {
     });
   };
 
-  renderProduct = (item, set) => {
+  /**
+   * @param {Object|undefined} personalItemInfo
+   * @param {Object} set
+   */
+  renderPersonalItemInfo = (personalItemInfo, set) => {
+    if (!personalItemInfo) {
+      return (
+        <div>
+          {`No data (not found in sets DB): Cannot find sets with given set number: ${set.set_num}`}
+        </div>
+      );
+    }
+    return (
+      <div>
+        {TYPES.map((type) => (
+          <div key={type}>
+            {this.renderPrice(type, personalItemInfo, set.num_parts)}
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  /**
+   * @param {string} type "taobao" or "pinduoduo"
+   */
+  renderPrice = (type, item, count) => {
+    const price = item[`${type}_lowest_price`];
+    const ppp = price / count;
+    return <div>{`${type} lowest price: ${price}, PPP: ${ppp}`}</div>;
+  };
+
+  /**
+   *
+   *
+   * @param {Object} set
+   * @param {Object|undefined} personalItemInfo
+   */
+  renderProduct = (set, personalItemInfo) => {
     // How to render product images: https://brickset.com/article/49510/new-version-of-brickset-api-now-available
     // {
     //   "thumbnailURL": " https://images.brickset.com/sets/small/21322-1.jpg ",
@@ -23,14 +63,9 @@ class App extends Component {
     // }
     return (
       <div>
-        <div>{`Product ID: ${item.product_id}`}</div>
+        <div>{`Product ID: ${set.set_num}`}</div>
         <div>{`Piece Count: ${set.num_parts}`}</div>
-        <div>{`Taobao lowest price: ${item.taobao_lowest_price}`}</div>
-        <div>{`Pinduoduo lowest price: ${item.pinduoduo_lowest_price}`}</div>
-        <div>{`PPP: ${ppp(
-          [item.taobao_lowest_price, item.pinduoduo_lowest_price],
-          set.num_parts
-        )}`}</div>
+        {this.renderPersonalItemInfo(personalItemInfo, set)}
 
         <img
           src={`https://images.brickset.com/sets/small/${set.set_num}.jpg`}
@@ -47,19 +82,13 @@ class App extends Component {
       return "Please input";
     }
 
-    const foundItem = db.find((item) => item.product_id.indexOf(value) !== -1);
-    if (!foundItem) {
-      return "No data (not found in personal DB)";
-    }
-
-    const foundSet = setsDb.find(
-      (set) => set.set_num === `${foundItem.product_id}-1`
-    );
+    const foundSet = getSetByKeyword(setsDb, value);
     if (!foundSet) {
-      return `No data (not found in sets DB): Cannot find sets with given product id: ${foundItem.product_id}`;
+      return "No data (not found in sets DB)";
     }
 
-    return this.renderProduct(foundItem, foundSet);
+    const foundItem = getPersonalItemBySetNum(personalDb, foundSet.set_num);
+    return this.renderProduct(foundSet, foundItem);
   };
 
   render() {
