@@ -5,7 +5,10 @@
  * @returns {Object|undefined}
  */
 export const getSetByKeyword = (db, keyword) =>
-  db.find((set) => set.set_num.indexOf(keyword) !== -1);
+  db.find((set /** @type {Rebrickable~Set} */) => {
+    // Take an example of 4180878 set, the type `set_num` is number, not string.
+    return String(set.set_num).indexOf(keyword) !== -1;
+  });
 
 /**
  * Get personal info object of a set by product ID

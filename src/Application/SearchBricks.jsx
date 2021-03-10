@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import debounce from "lodash.debounce";
 
 import personalDb from "./db/db.json";
 import setsDb from "./db/sets.csv.json";
@@ -7,14 +8,40 @@ import { getPersonalItemBySetNum, getSetByKeyword } from "./helpers";
 const TYPES = ["taobao", "pinduoduo"];
 
 export default class SearchBricks extends Component {
+  constructor(props) {
+    super(props);
+    this.searchSetByKeyword = debounce(this.searchSetByKeyword, 1000);
+  }
+
   state = {
     value: "",
+    /** @type {Brickable~Set} LEGO set */
+    set: null,
+    personalItem: null,
   };
 
   handleChange = (event) => {
     this.setState({
       value: event.target.value,
     });
+    console.log("xxxx value", event.target.value);
+    this.searchSetByKeyword(event.target.value);
+  };
+
+  searchSetByKeyword = (keyword) => {
+    const foundSet = getSetByKeyword(setsDb, keyword);
+    console.log("xxxx", foundSet);
+    if (!foundSet) {
+      this.setState({ set: null });
+      return;
+    }
+    this.setState({ set: foundSet });
+
+    const foundItem = getPersonalItemBySetNum(personalDb, foundSet.set_num);
+    if (!foundItem) {
+      this.setState({ personalItem: null });
+    }
+    this.setState({ personalItem: foundItem });
   };
 
   /**
@@ -25,7 +52,7 @@ export default class SearchBricks extends Component {
     if (!personalItemInfo) {
       return (
         <div>
-          {`No data (not found in sets DB): Cannot find sets with given set number: ${set.set_num}`}
+          {`No data (not found in personal info DB): Cannot find sets with given set number: ${set.set_num}`}
         </div>
       );
     }
@@ -46,7 +73,14 @@ export default class SearchBricks extends Component {
   renderPrice = (type, item, count) => {
     const price = item[`${type}_lowest_price`];
     const ppp = price / count;
-    return <div>{`${type} lowest price: ${price}, PPP: ${ppp}`}</div>;
+    return (
+      <div>
+        <b>{`${type} lowest price:`}</b>
+        {price}
+        <b>PPP</b>
+        {ppp}
+      </div>
+    );
   };
 
   /**
@@ -64,10 +98,15 @@ export default class SearchBricks extends Component {
     // }
     return (
       <div>
-        <div>{`Product ID: ${set.set_num}`}</div>
-        <div>{`Piece Count: ${set.num_parts}`}</div>
+        <div>
+          <b>Product ID:</b>
+          {set.set_num}
+        </div>
+        <div>
+          <b>Piece Count</b>
+          {set.num_parts}
+        </div>
         {this.renderPersonalItemInfo(personalItemInfo, set)}
-
         <img
           src={`https://images.brickset.com/sets/small/${set.set_num}.jpg`}
           alt={`LEGO ${set.set_num}`}
@@ -77,19 +116,17 @@ export default class SearchBricks extends Component {
   };
 
   renderContent = () => {
-    const { value } = this.state;
+    const { value, set, personalItem } = this.state;
 
     if (!value) {
       return "Please input";
     }
 
-    const foundSet = getSetByKeyword(setsDb, value);
-    if (!foundSet) {
+    if (!set) {
       return "No data (not found in sets DB)";
     }
 
-    const foundItem = getPersonalItemBySetNum(personalDb, foundSet.set_num);
-    return this.renderProduct(foundSet, foundItem);
+    return this.renderProduct(set, personalItem);
   };
 
   render() {
