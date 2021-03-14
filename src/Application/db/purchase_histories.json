@@ -1,0 +1,11 @@
+[
+  {
+    "product_id": "60004",
+    "date": "2021-03-08",
+    "price": 200,
+    "app": "xianyu",
+    "is_used": true,
+    "weight": 123,
+    "notes": "没有飞机，主楼少几个件"
+  }
+]

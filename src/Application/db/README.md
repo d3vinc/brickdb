@@ -20,3 +20,21 @@ Most of the types of `set_num` fields are `string`. But some of them are `number
   "num_parts": 0
 }
 ```
+
+## Tables
+
+### purchase_histories
+
+```json
+{
+  "product_id": "60004", // Required
+  "date": "2021-03-08", // Required, when purchase it
+  "price": 200, // Required, for how much
+  "app": "xianyu", // Required, from which App bought it
+  "is_used": true, // Optional, default is false, product is used or new
+  "weight": 123, // Optional, default is 0, unit is g, only bricks' weight, box not included
+  "notes": "没有飞机，主楼少几个件" // Optional, default is empty string
+}
+```
+
+Some fields or keys could not provide in this structure. For example, you can ignore "is_used" fields, then by default it is a new product.

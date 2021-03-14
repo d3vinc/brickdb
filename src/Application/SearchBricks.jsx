@@ -24,13 +24,11 @@ export default class SearchBricks extends Component {
     this.setState({
       value: event.target.value,
     });
-    console.log("xxxx value", event.target.value);
     this.searchSetByKeyword(event.target.value);
   };
 
   searchSetByKeyword = (keyword) => {
     const foundSet = getSetByKeyword(setsDb, keyword);
-    console.log("xxxx", foundSet);
     if (!foundSet) {
       this.setState({ set: null });
       return;
