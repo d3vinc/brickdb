@@ -1,4 +1,4 @@
-import { getSetByKeyword, getPersonalItemBySetNum } from "./helpers.js";
+import { getSetByKeyword, queryProductItemBySetNum } from "./helpers.js";
 
 const mockDb = [{ set_num: "10717-1" }, { set_num: "60197-1" }];
 const mockPersonalItemsInfoDb = [
@@ -10,7 +10,7 @@ test("getSetByKeyword should return proper value", () => {
   const testCases = [
     { input: "10", expect: { set_num: "10717-1" } },
     { input: "197", expect: { set_num: "60197-1" } },
-    { input: "11", expect: undefined },
+    { input: "11", expect: null },
   ];
 
   testCases.forEach((c) => {
@@ -18,15 +18,15 @@ test("getSetByKeyword should return proper value", () => {
   });
 });
 
-test("getPersonalItemBySetNum should return proper value", () => {
+test("queryProductItemBySetNum should return proper value", () => {
   const testCases = [
     { input: "10717-1", expect: { product_id: "10717" } },
     { input: "60197-1", expect: { product_id: "60197" } },
-    { input: "11223344", expect: undefined },
+    { input: "11223344", expect: null },
   ];
 
   testCases.forEach((c) => {
-    expect(getPersonalItemBySetNum(mockPersonalItemsInfoDb, c.input)).toEqual(
+    expect(queryProductItemBySetNum(mockPersonalItemsInfoDb, c.input)).toEqual(
       c.expect
     );
   });

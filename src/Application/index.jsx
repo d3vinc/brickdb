@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import SearchBricks from "./SearchBricks";
 import ErrorBoundary from "./ErrorBoundary";
 
-class App extends Component {
+export default class Application extends Component {
   render() {
     return (
       <div>
@@ -15,5 +15,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
