@@ -15,7 +15,8 @@ const PurchaseHistory = ({ set, purchaseHistory }) => {
       </div>
       <div>
         <span>{date}</span>|<b>{price}</b>|<span>{app}</span>|
-        <span>{isUsed ? "Used" : "New"}</span>|<span>{weight}</span>
+        <span>{isUsed ? "Used" : "New"}</span>|<span>{weight}</span>|
+        <span>PPP:{(price / set.num_parts).toFixed(2)}</span>
         <br />
         <p>{notes}</p>
       </div>
