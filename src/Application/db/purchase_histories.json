@@ -27,6 +27,24 @@
     "notes": "卖家：八成新，有四个人仔，部分缺件已经用正版乐高补充了。\n买家：部分零件有变色，可能因为阳光晒的，有一个板吻合度不高，有点按不上去。"
   },
   {
+    "product_id": "70668",
+    "date": "2021-03-18",
+    "price": 130,
+    "app": "xianyu",
+    "is_used": true,
+    "weight": 366,
+    "notes": "TODO 还没组装测试"
+  },
+  {
+    "product_id": "42089",
+    "date": "2021-03-20",
+    "price": 60,
+    "app": "xianyu",
+    "is_used": true,
+    "weight": 135,
+    "notes": "TODO 还没组装测试"
+  },
+  {
     "product_id": "XXXXXXXX",
     "date": "XXXXXXX",
     "price": 0,
