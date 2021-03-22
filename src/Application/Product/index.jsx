@@ -13,6 +13,7 @@ const Product = ({ set, productNote, purchaseHistory }) => {
   //   "imageURL": " https://images.brickset.com/sets/images/21322-1.jpg ",
   //   "bricksetURL": " https://brickset.com/sets/21322-1 ",
   // }
+  const imgUrl = `https://images.brickset.com/sets/small/${set.set_num}.jpg`;
   return (
     <div>
       <div>
@@ -25,10 +26,9 @@ const Product = ({ set, productNote, purchaseHistory }) => {
       </div>
       <ProductNote set={set} productNote={productNote} />
       <PurchaseHistory set={set} purchaseHistory={purchaseHistory} />
-      <img
-        src={`https://images.brickset.com/sets/small/${set.set_num}.jpg`}
-        alt={`LEGO ${set.set_num}`}
-      />
+      <a href={imgUrl} target="_blank" rel="noreferrer">
+        <img src={imgUrl} alt={`LEGO ${set.set_num}`} />
+      </a>
     </div>
   );
 };
