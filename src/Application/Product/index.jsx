@@ -1,12 +1,13 @@
 import ProductNote from "./ProductNote";
 import PurchaseHistory from "./PurchaseHistory";
+import PriceHistory from "./PriceHistory";
 
 /**
  * @param {Object} set
  * @param {ProductNote|null} productNote
  * @param {PurchaseHistory|null} purchaseHistory
  */
-const Product = ({ set, productNote, purchaseHistory }) => {
+const Product = ({ set, productNote, purchaseHistory, priceHistory }) => {
   // How to render product images: https://brickset.com/article/49510/new-version-of-brickset-api-now-available
   // {
   //   "thumbnailURL": " https://images.brickset.com/sets/small/21322-1.jpg ",
@@ -26,6 +27,7 @@ const Product = ({ set, productNote, purchaseHistory }) => {
       </div>
       <ProductNote set={set} productNote={productNote} />
       <PurchaseHistory set={set} purchaseHistory={purchaseHistory} />
+      <PriceHistory set={set} priceHistory={priceHistory} />
       <a href={imgUrl} target="_blank" rel="noreferrer">
         <img src={imgUrl} alt={`LEGO ${set.set_num}`} />
       </a>

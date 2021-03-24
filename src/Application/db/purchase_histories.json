@@ -5,7 +5,7 @@
     "price": 312,
     "app": "xianyu",
     "is_used": true,
-    "notes": "TODO"
+    "note": "TODO"
   },
   {
     "product_id": "60254",
@@ -13,7 +13,7 @@
     "price": 100,
     "app": "xianyu",
     "is_used": true,
-    "notes": "TODO"
+    "note": "TODO"
   },
   {
     "product_id": "75105",
@@ -22,7 +22,7 @@
     "app": "xianyu",
     "is_used": true,
     "weight": 1530,
-    "notes": "卖家：八成新，有四个人仔，部分缺件已经用正版乐高补充了。\n买家：部分零件有变色，可能因为阳光晒的，有一个板吻合度不高，有点按不上去。"
+    "note": "卖家：八成新，有四个人仔，部分缺件已经用正版乐高补充了。\n买家：部分零件有变色，可能因为阳光晒的，有一个板吻合度不高，有点按不上去。"
   },
   {
     "product_id": "75284",
@@ -30,7 +30,7 @@
     "price": 149,
     "app": "xianyu",
     "is_used": false,
-    "notes": "全新杀肉，无人仔及人仔配件"
+    "note": "全新杀肉，无人仔及人仔配件"
   },
   {
     "product_id": "70144",
@@ -38,7 +38,7 @@
     "price": 100,
     "app": "xianyu",
     "is_used": true,
-    "notes": "狮子战车，无人仔，少量缺件"
+    "note": "狮子战车，无人仔，少量缺件"
   },
   {
     "product_id": "76131",
@@ -47,7 +47,7 @@
     "app": "xianyu",
     "is_used": true,
     "weight": 670,
-    "notes": "无人仔，没有无限手套，飞机的炮弹少了两颗"
+    "note": "无人仔，没有无限手套，飞机的炮弹少了两颗"
   },
   {
     "product_id": "60004",
@@ -56,7 +56,7 @@
     "app": "xianyu",
     "is_used": true,
     "weight": 123,
-    "notes": "没有飞机，主楼少几个件"
+    "note": "没有飞机，主楼少几个件"
   },
   {
     "product_id": "70668",
@@ -65,7 +65,7 @@
     "app": "xianyu",
     "is_used": true,
     "weight": 366,
-    "notes": "TODO 还没组装测试"
+    "note": "TODO 还没组装测试"
   },
   {
     "product_id": "41094",
@@ -73,7 +73,7 @@
     "price": 120,
     "app": "xianyu",
     "is_used": true,
-    "notes": "心湖城灯塔，船和海豹部分找不到了"
+    "note": "心湖城灯塔，船和海豹部分找不到了"
   },
   {
     "product_id": "42089",
@@ -82,7 +82,7 @@
     "app": "xianyu",
     "is_used": true,
     "weight": 135,
-    "notes": "TODO 还没组装测试"
+    "note": "TODO 还没组装测试"
   },
   {
     "product_id": "70746",
@@ -90,7 +90,7 @@
     "price": 95,
     "app": "xianyu",
     "is_used": false,
-    "notes": "幻影忍者，全新原封包，无贴纸，人仔零件全"
+    "note": "幻影忍者，全新原封包，无贴纸，人仔零件全"
   },
   {
     "product_id": "75291",
@@ -98,7 +98,7 @@
     "price": 249,
     "app": "xianyu",
     "is_used": true,
-    "notes": "盒说全，二手，无缺件，杀肉无人仔"
+    "note": "盒说全，二手，无缺件，杀肉无人仔"
   },
   {
     "product_id": "75183",
@@ -106,7 +106,7 @@
     "price": 88,
     "app": "xianyu",
     "is_used": true,
-    "notes": "达斯维达的变身，二手，95新无把玩，杀肉无人仔"
+    "note": "达斯维达的变身，二手，95新无把玩，杀肉无人仔"
   },
   {
     "product_id": "41062",
@@ -114,6 +114,6 @@
     "price": 99,
     "app": "xianyu",
     "is_used": true,
-    "notes": "爱莎的冰雪城堡，二手已拼，95新，人仔零件全"
+    "note": "爱莎的冰雪城堡，二手已拼，95新，人仔零件全"
   }
 ]

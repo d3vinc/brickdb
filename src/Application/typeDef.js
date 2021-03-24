@@ -20,3 +20,9 @@
  * @typedef {Object} PurchaseHistory
  * @property {string} product_id The LEGO product ID
  */
+
+/**
+ * Stores price historis of LEGO set checking from website
+ * @typedef {Object} PriceHistory
+ * @property {string} product_id The LEGO product ID
+ */

@@ -1,14 +1,5 @@
 [
   {
-    "product_id": "10214",
-    "taobao_lowest_price": 2000
-  },
-  {
-    "product_id": "10255",
-    "official_price": 0,
-    "taobao_lowest_price": 1500
-  },
-  {
     "product_id": "10258",
     "official_price": 1099,
     "taobao_lowest_price": 700

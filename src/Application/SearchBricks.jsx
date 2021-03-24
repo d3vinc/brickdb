@@ -3,7 +3,8 @@ import debounce from "lodash.debounce";
 
 import setsDb from "./db/sets.csv.json";
 import productNotes from "./db/product_notes.json";
-import perchaseHistories from "./db/purchase_histories.json";
+import priceHistories from "./db/price_histories.json";
+import purchaseHistories from "./db/purchase_histories.json";
 import { queryProductItemBySetNum, getSetByKeyword } from "./helpers";
 import Product from "./Product";
 
@@ -11,6 +12,14 @@ export default class SearchBricks extends Component {
   constructor(props) {
     super(props);
     this.searchSetByKeyword = debounce(this.searchSetByKeyword, 1000);
+    console.debug(
+      "purchaseHistories",
+      purchaseHistories.reduce((result, currentValue) => {
+        result += currentValue.price;
+        return result;
+      }, 0)
+    );
+    window.setsDb = setsDb;
   }
 
   state = {
@@ -21,6 +30,8 @@ export default class SearchBricks extends Component {
     productNote: null,
     /** @type {PurchaseHistory} */
     purchaseHistory: null,
+    /** @type {PriceHistory} */
+    priceHistory: null,
   };
 
   handleChange = (event) => {
@@ -41,14 +52,21 @@ export default class SearchBricks extends Component {
       set: foundSet,
       productNote: queryProductItemBySetNum(productNotes, foundSet.set_num),
       purchaseHistory: queryProductItemBySetNum(
-        perchaseHistories,
+        purchaseHistories,
         foundSet.set_num
       ),
+      priceHistory: queryProductItemBySetNum(priceHistories, foundSet.set_num),
     });
   };
 
   renderContent = () => {
-    const { value, set, productNote, purchaseHistory } = this.state;
+    const {
+      value,
+      set,
+      productNote,
+      purchaseHistory,
+      priceHistory,
+    } = this.state;
 
     if (!value) {
       return "Please input";
@@ -63,6 +81,7 @@ export default class SearchBricks extends Component {
         set={set}
         productNote={productNote}
         purchaseHistory={purchaseHistory}
+        priceHistory={priceHistory}
       />
     );
   };

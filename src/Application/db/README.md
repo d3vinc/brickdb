@@ -38,3 +38,7 @@ Most of the types of `set_num` fields are `string`. But some of them are `number
 ```
 
 Some fields or keys could not provide in this structure. For example, you can ignore "is_used" fields, then by default it is a new product.
+
+### price_histories
+
+I check the price of sets on taobao.com or other website. Then add these prices to this table manually.
