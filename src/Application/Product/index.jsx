@@ -14,7 +14,8 @@ const Product = ({ set, productNote, purchaseHistory, priceHistory }) => {
   //   "imageURL": " https://images.brickset.com/sets/images/21322-1.jpg ",
   //   "bricksetURL": " https://brickset.com/sets/21322-1 ",
   // }
-  const imgUrl = `https://images.brickset.com/sets/small/${set.set_num}.jpg`;
+  let imgUrl = `https://images.brickset.com/sets/small/${set.set_num}.jpg`;
+  imgUrl = `https://xxd3vin.github.io/static/images.brickset.com/sets/small/${set.set_num}.jpg`;
   return (
     <div>
       <div>

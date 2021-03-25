@@ -11,7 +11,7 @@ import Product from "./Product";
 export default class SearchBricks extends Component {
   constructor(props) {
     super(props);
-    this.searchSetByKeyword = debounce(this.searchSetByKeyword, 1000);
+    this.searchSetByKeyword = debounce(this.searchSetByKeyword, 500);
     console.debug(
       "purchaseHistories",
       purchaseHistories.reduce((result, currentValue) => {
