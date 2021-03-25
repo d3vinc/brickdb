@@ -5,7 +5,11 @@ import setsDb from "./db/sets.csv.json";
 import productNotes from "./db/product_notes.json";
 import priceHistories from "./db/price_histories.json";
 import purchaseHistories from "./db/purchase_histories.json";
-import { queryProductItemBySetNum, getSetByKeyword } from "./helpers";
+import {
+  queryProductItemBySetNum,
+  queryProductItemsBySetNum,
+  getSetByKeyword,
+} from "./helpers";
 import Product from "./Product";
 
 export default class SearchBricks extends Component {
@@ -30,8 +34,8 @@ export default class SearchBricks extends Component {
     productNote: null,
     /** @type {PurchaseHistory} */
     purchaseHistory: null,
-    /** @type {PriceHistory} */
-    priceHistory: null,
+    /** @type {PriceHistory[]} */
+    priceHistories: [],
   };
 
   handleChange = (event) => {
@@ -55,7 +59,10 @@ export default class SearchBricks extends Component {
         purchaseHistories,
         foundSet.set_num
       ),
-      priceHistory: queryProductItemBySetNum(priceHistories, foundSet.set_num),
+      priceHistories: queryProductItemsBySetNum(
+        priceHistories,
+        foundSet.set_num
+      ),
     });
   };
 
@@ -65,7 +72,7 @@ export default class SearchBricks extends Component {
       set,
       productNote,
       purchaseHistory,
-      priceHistory,
+      priceHistories,
     } = this.state;
 
     if (!value) {
@@ -81,7 +88,7 @@ export default class SearchBricks extends Component {
         set={set}
         productNote={productNote}
         purchaseHistory={purchaseHistory}
-        priceHistory={priceHistory}
+        priceHistories={priceHistories}
       />
     );
   };

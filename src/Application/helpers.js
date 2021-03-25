@@ -20,3 +20,14 @@ export const getSetByKeyword = (db, keyword) =>
  */
 export const queryProductItemBySetNum = (db, setNum) =>
   db.find((item) => `${item.product_id}-1` === setNum) || null;
+
+/**
+ * By given set number, can get:
+ * - Purchase histories of products (in purchase_histories.json)
+ * - Historical product prices (in price_histories.json)
+ * @param {Array} rows
+ * @param {string} setNum e.g. "10717-1"
+ * @returns {PriceHistory[]}
+ */
+export const queryProductItemsBySetNum = (rows, setNum) =>
+  rows.filter((item) => `${item.product_id}-1` === setNum);
