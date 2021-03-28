@@ -12,6 +12,8 @@ import {
 } from "./helpers";
 import Product from "./Product";
 
+const defaultValue = "";
+
 export default class SearchBricks extends Component {
   constructor(props) {
     super(props);
@@ -24,10 +26,11 @@ export default class SearchBricks extends Component {
       }, 0)
     );
     window.setsDb = setsDb;
+    this.inputRef = React.createRef();
   }
 
   state = {
-    value: "",
+    value: defaultValue,
     /** @type {Brickable~Set} LEGO set */
     set: null,
     /** @type {ProductNote} */
@@ -43,6 +46,11 @@ export default class SearchBricks extends Component {
       value: event.target.value,
     });
     this.searchSetByKeyword(event.target.value);
+  };
+
+  handleReset = () => {
+    this.setState({ value: defaultValue });
+    this.inputRef.current.focus();
   };
 
   searchSetByKeyword = (keyword) => {
@@ -96,7 +104,12 @@ export default class SearchBricks extends Component {
   render() {
     return (
       <div>
-        <input onChange={this.handleChange}></input>
+        <input
+          autoFocus
+          ref={this.inputRef}
+          onChange={this.handleChange}
+        ></input>{" "}
+        <button onClick={this.handleReset}>Reset</button>
         <div>{this.renderContent()}</div>
       </div>
     );
