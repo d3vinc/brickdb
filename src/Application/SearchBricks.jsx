@@ -107,6 +107,7 @@ export default class SearchBricks extends Component {
         <input
           autoFocus
           ref={this.inputRef}
+          value={this.state.value}
           onChange={this.handleChange}
         ></input>{" "}
         <button onClick={this.handleReset}>Reset</button>
