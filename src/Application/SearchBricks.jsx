@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import debounce from "lodash.debounce";
 
 import setsDb from "./db/sets.csv.json";
