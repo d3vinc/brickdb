@@ -41,10 +41,6 @@ export default class SearchBricks extends Component {
     this.inputRef = React.createRef();
   }
 
-  componentDidMount() {
-    this.inputRef.current.focus();
-  }
-
   handleChange = (event) => {
     this.setState({
       value: event.target.value,
@@ -109,6 +105,7 @@ export default class SearchBricks extends Component {
     return (
       <div>
         <input
+          autoFocus
           ref={this.inputRef}
           value={this.state.value}
           onChange={this.handleChange}
