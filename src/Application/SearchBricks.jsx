@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import debounce from "lodash.debounce";
 
 import setsDb from "./db/sets.csv.json";
@@ -15,6 +16,18 @@ import Product from "./Product";
 const defaultValue = "";
 
 export default class SearchBricks extends Component {
+  state = {
+    value: defaultValue,
+    /** @type {Brickable~Set} LEGO set */
+    set: null,
+    /** @type {ProductNote} */
+    productNote: null,
+    /** @type {PurchaseHistory} */
+    purchaseHistory: null,
+    /** @type {PriceHistory[]} */
+    priceHistories: [],
+  };
+
   constructor(props) {
     super(props);
     this.searchSetByKeyword = debounce(this.searchSetByKeyword, 500);
@@ -29,17 +42,9 @@ export default class SearchBricks extends Component {
     this.inputRef = React.createRef();
   }
 
-  state = {
-    value: defaultValue,
-    /** @type {Brickable~Set} LEGO set */
-    set: null,
-    /** @type {ProductNote} */
-    productNote: null,
-    /** @type {PurchaseHistory} */
-    purchaseHistory: null,
-    /** @type {PriceHistory[]} */
-    priceHistories: [],
-  };
+  componentDidMount() {
+    this.inputRef.current.focus();
+  }
 
   handleChange = (event) => {
     this.setState({
@@ -84,7 +89,7 @@ export default class SearchBricks extends Component {
     } = this.state;
 
     if (!value) {
-      return "Please input";
+      return "Please input LEGO product ID, e.g. 75192";
     }
 
     if (!set) {
@@ -105,7 +110,6 @@ export default class SearchBricks extends Component {
     return (
       <div>
         <input
-          autoFocus
           ref={this.inputRef}
           value={this.state.value}
           onChange={this.handleChange}
