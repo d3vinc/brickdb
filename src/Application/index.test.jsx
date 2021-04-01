@@ -3,6 +3,6 @@ import Application from "./";
 
 test("renders learn react link", () => {
   render(<Application />);
-  const linkElement = screen.getByText(/Brick DB/i);
+  const linkElement = screen.getByText(/Please input/i);
   expect(linkElement).toBeInTheDocument();
 });
