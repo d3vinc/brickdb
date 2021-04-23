@@ -103,7 +103,7 @@ export default class SearchBricks extends Component {
 
   render() {
     return (
-      <div>
+      <div className="search-bricks">
         <input
           autoFocus
           ref={this.inputRef}

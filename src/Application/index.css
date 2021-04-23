@@ -13,3 +13,8 @@
     color: white;
   }
 }
+
+.search-bricks button,
+.search-bricks input {
+  line-height: 35px;
+}
