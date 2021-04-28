@@ -107,6 +107,8 @@ export default class SearchBricks extends Component {
         <input
           autoFocus
           ref={this.inputRef}
+          type="number"
+          pattern="[0-9]*" /* iOS: Bring up the numeric keypad*/
           value={this.state.value}
           onChange={this.handleChange}
         ></input>{" "}
