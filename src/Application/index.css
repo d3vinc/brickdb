@@ -4,6 +4,9 @@
     background-color: white;
     color: black;
   }
+  .search-bricks button {
+    color: black;
+  }
 }
 
 /* Dark mode */
@@ -12,9 +15,17 @@
     background-color: black;
     color: white;
   }
+  .search-bricks button {
+    color: white;
+  }
 }
 
 .search-bricks button,
 .search-bricks input {
   line-height: 35px;
+}
+
+.search-bricks button {
+  -webkit-appearance: none; /* Fix button style on Mobile Safari */
+  font-size: large;
 }
