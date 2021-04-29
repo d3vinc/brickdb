@@ -37,7 +37,12 @@ export default class Product extends Component {
         <div>
           <b>Piece Count: </b>
           {set.num_parts}{" "}
-          <input value={testPrice} onChange={this.handleChange} />
+          <input
+            type="number"
+            pattern="[0-9]*" /* iOS: Bring up the numeric keypad*/
+            value={testPrice}
+            onChange={this.handleChange}
+          />
           {testPrice ? (
             <span> PPP: {(testPrice / set.num_parts).toFixed(2)}</span>
           ) : null}
