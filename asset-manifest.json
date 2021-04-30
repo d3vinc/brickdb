@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/brickdb/static/css/main.67a3facf.chunk.css",
+    "main.js": "/brickdb/static/js/main.c70eeae4.chunk.js",
+    "main.js.map": "/brickdb/static/js/main.c70eeae4.chunk.js.map",
+    "runtime-main.js": "/brickdb/static/js/runtime-main.c9a57c69.js",
+    "runtime-main.js.map": "/brickdb/static/js/runtime-main.c9a57c69.js.map",
+    "static/js/2.d4add118.chunk.js": "/brickdb/static/js/2.d4add118.chunk.js",
+    "static/js/2.d4add118.chunk.js.map": "/brickdb/static/js/2.d4add118.chunk.js.map",
+    "static/js/3.fb40c7ec.chunk.js": "/brickdb/static/js/3.fb40c7ec.chunk.js",
+    "static/js/3.fb40c7ec.chunk.js.map": "/brickdb/static/js/3.fb40c7ec.chunk.js.map",
+    "index.html": "/brickdb/index.html",
+    "static/css/main.67a3facf.chunk.css.map": "/brickdb/static/css/main.67a3facf.chunk.css.map",
+    "static/js/2.d4add118.chunk.js.LICENSE.txt": "/brickdb/static/js/2.d4add118.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c9a57c69.js",
+    "static/js/2.d4add118.chunk.js",
+    "static/css/main.67a3facf.chunk.css",
+    "static/js/main.c70eeae4.chunk.js"
+  ]
+}
