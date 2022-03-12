@@ -32,3 +32,18 @@ To:
     ]
 }
 ```
+
+## [ ] JSON vs Yaml, which is better for me?
+
+I used JSON to store product info like the price of the bought used product. But when I manually update JSON, it is a bit messy for me. If I used Yaml, maybe it more suitable for humans to read and write.
+
+![https___www.json.png](https://trello-attachments.s3.amazonaws.com/603e81c97b572446fd853fca/604e3b6091575988a6a7a235/6fb93ff2e49ac87b4a952652fe621051/https___www.json.png) 
+
+## If want to support Yaml
+
+Try to answer these questions:
+
+- Do I want to read Yaml at runtime or build time?
+- If want to be at build time, then how to add Yaml loader to create-react-app
+- If want to be at runtime, then which library to choose?
+  - js-yaml
