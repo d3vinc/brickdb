@@ -27,7 +27,7 @@ export default class Product extends Component {
     //   "bricksetURL": " https://brickset.com/sets/21322-1 ",
     // }
     let imgUrl = `https://images.brickset.com/sets/small/${set.set_num}.jpg`;
-    imgUrl = `https://d3vinc.github.io/static/images.brickset.com/sets/small/${set.set_num}.jpg`;
+    imgUrl = `https://xx7y7xx.github.io/static/images.brickset.com/sets/small/${set.set_num}.jpg`;
     return (
       <div>
         <div>
