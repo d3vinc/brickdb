@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import debounce from "lodash.debounce";
 
-import setsDb from "./db/sets.csv.json";
-import productNotes from "./db/product_notes.json";
-import priceHistories from "./db/price_histories.json";
-import purchaseHistories from "./db/purchase_histories.json";
 import {
   queryProductItemBySetNum,
   queryProductItemsBySetNum,
@@ -32,12 +28,12 @@ export default class SearchBricks extends Component {
     this.searchSetByKeyword = debounce(this.searchSetByKeyword, 500);
     console.debug(
       "purchaseHistories",
-      purchaseHistories.reduce((result, currentValue) => {
+      this.props.data.purchaseHistories.reduce((result, currentValue) => {
         result += currentValue.price;
         return result;
       }, 0)
     );
-    window.setsDb = setsDb;
+    window.setsDb = this.props.data.sets;
     this.inputRef = React.createRef();
   }
 
@@ -54,7 +50,7 @@ export default class SearchBricks extends Component {
   };
 
   searchSetByKeyword = (keyword) => {
-    const foundSet = getSetByKeyword(setsDb, keyword);
+    const foundSet = getSetByKeyword(this.props.data.sets, keyword);
     if (!foundSet) {
       this.setState({ set: null });
       return;
@@ -62,26 +58,24 @@ export default class SearchBricks extends Component {
 
     this.setState({
       set: foundSet,
-      productNote: queryProductItemBySetNum(productNotes, foundSet.set_num),
+      productNote: queryProductItemBySetNum(
+        this.props.data.productNotes,
+        foundSet.set_num
+      ),
       purchaseHistory: queryProductItemBySetNum(
-        purchaseHistories,
+        this.props.data.purchaseHistories,
         foundSet.set_num
       ),
       priceHistories: queryProductItemsBySetNum(
-        priceHistories,
+        this.props.data.priceHistories,
         foundSet.set_num
       ),
     });
   };
 
   renderContent = () => {
-    const {
-      value,
-      set,
-      productNote,
-      purchaseHistory,
-      priceHistories,
-    } = this.state;
+    const { value, set, productNote, purchaseHistory, priceHistories } =
+      this.state;
 
     if (!value) {
       return "Please input LEGO product ID, e.g. 75192";

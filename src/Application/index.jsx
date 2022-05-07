@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
-import SearchBricks from "./SearchBricks";
+import { Settings } from "@db-man/components";
+import SearchBricksWrapper from "Application/SearchBricksWrapper";
 import ErrorBoundary from "./ErrorBoundary";
 
 import "./index.css";
@@ -10,7 +11,9 @@ export default class Application extends Component {
     return (
       <div>
         <ErrorBoundary>
-          <SearchBricks />
+          <Settings>
+            <SearchBricksWrapper />
+          </Settings>
         </ErrorBoundary>
       </div>
     );
