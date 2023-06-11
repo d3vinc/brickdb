@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
+import SearchBricks from 'Application/SearchBricks';
+import { constants } from '@db-man/components';
+import { GithubDbV2 } from '@db-man/github';
 
-import SearchBricks from "Application/SearchBricks";
-import { githubDb } from "@db-man/github";
-
-const dbName = "brickdb";
+const dbName = 'brickdb';
 
 export default function SearchBricksWrapper() {
   const [loading, setLoading] = useState(null);
@@ -16,11 +16,20 @@ export default function SearchBricksWrapper() {
   });
 
   useEffect(() => {
+    const githubDb = new GithubDbV2({
+      personalAccessToken: localStorage.getItem(
+        constants.LS_KEY_GITHUB_PERSONAL_ACCESS_TOKEN
+      ),
+      repoPath: localStorage.getItem(constants.LS_KEY_GITHUB_REPO_PATH),
+      owner: localStorage.getItem(constants.LS_KEY_GITHUB_OWNER),
+      repoName: localStorage.getItem(constants.LS_KEY_GITHUB_REPO_NAME),
+      dbsSchema: localStorage.getItem(constants.LS_KEY_DBS_SCHEMA),
+    });
     const controller = new AbortController();
 
     setLoading(true);
     Promise.all(
-      ["price_histories", "product_notes", "purchase_histories", "sets"].map(
+      ['price_histories', 'product_notes', 'purchase_histories', 'sets'].map(
         (tableName) =>
           githubDb
             .getTableRows(dbName, tableName, controller.signal)
